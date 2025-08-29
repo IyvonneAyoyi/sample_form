@@ -1,5 +1,6 @@
 const button =document.querySelector(".submit");
 const message = document.querySelector(".signup-message");
+const form = document.querySelector("#signup-form");
 
 
 // Show/hide password toggle
@@ -21,7 +22,8 @@ toggles.forEach(toggle => {
 
 //Signup Validation
 
-button.addEventListener('click',()=>{
+button.addEventListener('click',(e)=>{
+    e.preventDefault();
     const name = document.querySelector("#name").value.trim();
     const email = document.querySelector("#email").value.trim();
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -52,6 +54,10 @@ button.addEventListener('click',()=>{
     else{
         message.innerText = `Account for ${name} created successfully!`;
         message.style.color = "lightgreen";
+
+// Reset the form after successful validation
+    form.reset();
     }
 
 });
+

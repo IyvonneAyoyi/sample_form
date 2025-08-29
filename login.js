@@ -1,5 +1,6 @@
 const button = document.querySelector(".submit");
 const message = document.querySelector(".login-message");
+const form = document.querySelector("#login-form");
 
 // Show/hide password toggle
 const passwordInput = document.querySelector("#password");
@@ -13,7 +14,8 @@ toggle.addEventListener("click", () => {
 
 
 //Login validation
-button.addEventListener('click', ()=>{
+button.addEventListener('click', (e)=>{
+    e.preventDefault();
     const name = document.querySelector("#name").value.trim();
     const password = passwordInput.value.trim();
 
@@ -25,8 +27,12 @@ button.addEventListener('click', ()=>{
 
     else{
         message.innerText = `Welcome, ${name}! You've logged in successfuly.`;
-        message.style.color = "lightgreen"
+        message.style.color = "lightgreen";
+
+//  Reset the form after successful validation    
+    form.reset();
     }
     
 });
+
 
