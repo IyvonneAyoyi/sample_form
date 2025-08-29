@@ -14,8 +14,14 @@
     <div class="input">
     <input type="text" id="name" placeholder="Full Name" required>
     <input type="email" id="email" placeholder="Email" required>
-    <input type="password" id="password" placeholder="Password" required>
-    <input type="password" id="confirm-password" placeholder="Confirm Password" required>
+    <div class="password-wrapper">
+            <input type="password" id="password" placeholder="Password" required>
+            <span id="toggle-password">👁️</span>
+    </div>
+    <div class="password-wrapper">
+            <input type="password" id="confirm-password" placeholder="Confirm Password" required>
+            <span id="toggle-confirm">👁️</span>
+    </div>
   </div>
 
   <button class="submit">Sign Up</button>

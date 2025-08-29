@@ -1,13 +1,29 @@
 const button =document.querySelector(".submit");
 const message = document.querySelector(".signup-message");
 
+
+// Show/hide password toggle
+const passwordInput = document.querySelector("#password");
+const confirmInput = document.querySelector("#confirm-password");
+const togglePassword = document.querySelector("#toggle-password");
+const toggleConfirm = document.querySelector("#toggle-confirm");
+
+togglePassword.addEventListener("click", () => {
+    passwordInput.type = passwordInput.type === "password" ? "text" : "password";
+});
+toggleConfirm.addEventListener("click", () => {
+    confirmInput.type = confirmInput.type === "password" ? "text" : "password";
+});
+
+//Signup Validation
+
 button.addEventListener('click',()=>{
     const name = document.querySelector("#name").value.trim();
     const email = document.querySelector("#email").value.trim();
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    const password = document.querySelector("#password").value.trim();
+    const password = passwordInput.value.trim();
     const passwordRegex = /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[@$!%*?&_]).{8,}$/;
-    const confirmPassword = document.querySelector("#confirm-password").value.trim();
+    const confirmPassword = confirmInput.value.trim();
 
     if(!name || !email || !password || !confirmPassword){
         message.innerText = "All fields required!";
