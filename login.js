@@ -1,0 +1,20 @@
+const button = document.querySelector(".submit");
+const message = document.querySelector(".login-message");
+
+button.addEventListener('click', ()=>{
+    const name = document.querySelector("#name").value.trim();
+    const password = document.querySelector("#password").value.trim();
+
+    if(!name || !password) {
+        message.innerText = "Please enter both name and password.";
+        message.style.color = "red";
+
+    }
+
+    else{
+        message.innerText = `Welcome, ${name}! You've logged in successfuly.`;
+        message.style.color = "lightgreen"
+    }
+    
+});
+
