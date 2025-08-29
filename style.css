@@ -75,3 +75,35 @@ h2{
   font-size: 14px;
   margin-top: 10px;
 }
+
+/* Wrap password input and toggle together */
+.password-wrapper {
+    position: relative;
+    margin-bottom: 10px;
+}
+
+/* Password input takes full width */
+.password-wrapper input {
+    width: 200px;
+    padding: 10px 40px 10px 10px; /* extra right padding for the toggle */
+    box-sizing: border-box;
+}
+
+/* Eye toggle */
+.password-wrapper i {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-70%);
+    cursor: pointer;
+    font-size: 20px;
+    color: #ebe8e8ec;
+    user-select: none; /* prevent text selection */
+    transition: color 0.3s;
+    
+}
+
+/* Change color on hover */
+.password-wrapper i:hover {
+    color: #000;
+}

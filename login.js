@@ -3,11 +3,14 @@ const message = document.querySelector(".login-message");
 
 // Show/hide password toggle
 const passwordInput = document.querySelector("#password");
-const togglePassword = document.querySelector("#toggle-password");
+const toggle = document.querySelector(".toggle-password");
 
-togglePassword.addEventListener("click", () => {
+toggle.addEventListener("click", () => {
     passwordInput.type = passwordInput.type === "password" ? "text" : "password";
+    toggle.classList.toggle("fa-eye");
+    toggle.classList.toggle("fa-eye-slash");
 });
+
 
 //Login validation
 button.addEventListener('click', ()=>{

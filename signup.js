@@ -5,14 +5,18 @@ const message = document.querySelector(".signup-message");
 // Show/hide password toggle
 const passwordInput = document.querySelector("#password");
 const confirmInput = document.querySelector("#confirm-password");
-const togglePassword = document.querySelector("#toggle-password");
-const toggleConfirm = document.querySelector("#toggle-confirm");
+const toggles = document.querySelectorAll(".toggle-password");
 
-togglePassword.addEventListener("click", () => {
-    passwordInput.type = passwordInput.type === "password" ? "text" : "password";
-});
-toggleConfirm.addEventListener("click", () => {
-    confirmInput.type = confirmInput.type === "password" ? "text" : "password";
+toggles.forEach(toggle => {
+    toggle.addEventListener("click", () => {
+        // Find the related input in the same wrapper
+        const input = toggle.previousElementSibling;
+        input.type = input.type === "password" ? "text" : "password";
+
+        // Toggle the icon
+        toggle.classList.toggle("fa-eye");
+        toggle.classList.toggle("fa-eye-slash");
+    });
 });
 
 //Signup Validation
